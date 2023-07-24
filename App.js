@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
         <View style={styles.header}>
             <Text style={styles.boldText}>
-                Hello World
+                My Bookshelf
             </Text>
         </View>
         <View style={styles.body}>
