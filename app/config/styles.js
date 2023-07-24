@@ -1,7 +1,7 @@
 import colors from './colors';
 
 export default {
-    addInventoryScreenText: {
+    bookshelfScreen: {
         textAlign: 'center',
         marginTop: 40,
         backgroundColor: colors.darkGrey,

@@ -1,10 +1,15 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
+import LibraryDisplay from '../components/LibraryDisplay';
+import styles from '../config/styles';
+import LoginRegisterModal from '../components/LoginRegisterModal';
 
 const BookshelfScreen = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.bookshelfScreen}>
         <Text>BookshelfScreen</Text>
-    </View>
+        <LoginRegisterModal />
+        <LibraryDisplay />
+    </SafeAreaView>
   )
 }
 
