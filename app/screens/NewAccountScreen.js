@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, TextInput } from "react-native";
 
-const NewAccountModal = () => {
+const NewAccountScreen = () => {
     return (
         <SafeAreaView>
             <Text style={{ alignSelf: "center" }}>Create an account to start adding books.</Text>
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default NewAccountModal;
+export default NewAccountScreen;

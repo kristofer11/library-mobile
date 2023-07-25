@@ -16,7 +16,7 @@ const Main = () => {
                     showIcon: true
                 }}
             >
-                {/* <Tab.Screen
+                <Tab.Screen
                     name='Home'
                     component={HomeScreen}
                     options={{
@@ -31,7 +31,7 @@ const Main = () => {
                             />
                         )
                     }}
-                /> */}
+                />
                 <Tab.Screen
                     name='My Bookshelf'
                     component={BookshelfScreen}

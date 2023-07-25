@@ -1,30 +1,19 @@
 import React from 'react'
-import { SafeAreaView, View, Text, TextInput } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, Button } from 'react-native';
 import styles from '../config/styles';
 
 const HomeScreen = () => {
     return (
         <SafeAreaView>
-            <Text style={{ alignSelf: "center" }}>Create Your Account Below</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Email"
+            <Text style={{ alignSelf: "center" }}>Welcome to My Bookshelf</Text>
+            <Button 
+                title="View my shelf"
             />
-            <TextInput
-                style={styles.input}
-                placeholder="User Name"
+            <Button 
+                title="Login"
             />
-            <TextInput
-                style={styles.input}
-                placeholder="Password"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Re-Enter Password"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Supervisors Email"
+                        <Button 
+                title="Register"
             />
         </SafeAreaView>
     )
