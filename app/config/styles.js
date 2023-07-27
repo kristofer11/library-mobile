@@ -11,6 +11,19 @@ export default {
         paddingTop: 15,
         paddingHorizontal: 90
     },
+    bookItem: {
+    },
+    listItemContent: {
+        backgroundColor: '#fff'
+    },
+    bookItemTitle: {
+        color: 'navy',
+        backgroundColor: 'orange'
+    },
+    bookItemSubtitle: {
+        color: '#fff',
+        backgroundColor: 'red',
+    },
     homeScreenText: {
         textAlign: 'center',
         marginTop: 40,

@@ -1,17 +1,26 @@
 import { View, Text } from "react-native";
-import HomeScreen from "./HomeScreen";
 import BookshelfScreen from "./BookshelfScreen";
-import AccountScreen from "./AccountScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
+import { useState } from "react";
+import { BOOKSHELF_DATA } from "../../shared/BOOKSHELF_DATA.JS";
 
 const Main = () => {
-    const Tab = createBottomTabNavigator();
+    // const Tab = createBottomTabNavigator();
+    const [books, setBooks] = useState(BOOKSHELF_DATA);
 
     return (
-        <View style={{ flex: 1, backgroundColor: "#888" }}>
+        <BookshelfScreen books={books} />
+    )
+}
+
+export default Main;
+
+
+
+{/* <BookshelfScreen />
             <Tab.Navigator
-                initialRouteName='Home'
+                initialRouteName='Bookshelf'
                 options={{
                     showIcon: true
                 }}
@@ -64,9 +73,4 @@ const Main = () => {
                         )
                     }}
                 />
-            </Tab.Navigator>
-        </View>
-    )
-}
-
-export default Main;
+            </Tab.Navigator> */}

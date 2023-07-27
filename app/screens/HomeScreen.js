@@ -3,6 +3,8 @@ import { SafeAreaView, View, Text, TextInput, Button } from 'react-native';
 import styles from '../config/styles';
 
 const HomeScreen = () => {
+    const [books, setBooks] = useState(BOOKSHELF_DATA);
+
     return (
         <SafeAreaView>
             <Text style={{ alignSelf: "center" }}>Welcome to My Bookshelf</Text>

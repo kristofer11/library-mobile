@@ -5,8 +5,6 @@ import React from "react";
 export default function App() {
 
     return (
-        <NavigationContainer>
-            <Main />
-        </NavigationContainer>
+        <Main />
     );
 }
