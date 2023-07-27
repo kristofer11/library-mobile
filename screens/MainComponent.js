@@ -1,17 +1,50 @@
-import { View, Text } from "react-native";
+import { View, Platform } from "react-native";
+import Constants from "expo-constants";
 import BookshelfScreen from "./BookshelfScreen";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Icon } from "react-native-elements";
-import { useState } from "react";
-import { BOOKSHELF_DATA } from "../../shared/BOOKSHELF_DATA.JS";
+import BookInfoScreen from "./BookInfoScreen";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { Icon } from "react-native-elements";
+import { BOOKSHELF_DATA } from "../shared/BOOKSHELF_DATA";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Main = () => {
-    // const Tab = createBottomTabNavigator();
-    const [books, setBooks] = useState(BOOKSHELF_DATA);
+const BookshelfNavigator = () => {
+    const Stack = createStackNavigator();
 
     return (
-        <BookshelfScreen books={books} />
+        <Stack.Navigator
+            initialRouteName="Bookshelf"
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: '#5637DD'
+                },
+                headerTintColor: '#fff',
+            }}
+        >
+            <Stack.Screen 
+                name="Bookshelf"
+                component={BookshelfScreen}
+                options={{
+                    title: 'Bookshelf'
+                }}
+            />
+            <Stack.Screen 
+                name="BookInfoScreen"
+                component={BookInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.book.title
+                })}
+            />
+        </Stack.Navigator>
+        // <BookshelfScreen books={books} />
     )
+};
+
+const Main = () => {
+   return (
+        <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
+            <BookshelfNavigator />
+        </View>
+   )
 }
 
 export default Main;
