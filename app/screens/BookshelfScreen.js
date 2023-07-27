@@ -11,8 +11,6 @@ const BookshelfScreen = ({ books }) => {
                 <ListItem.Content style={styles.listItemContent}>
                     <ListItem.Title style={styles.bookItemTitle}>{book.title}</ListItem.Title>
                     <ListItem.Subtitle style={styles.bookItemSubtitle}>{book.author}</ListItem.Subtitle>
-                    <ListItem.Subtitle style={styles.bookItemSubtitle}>{book.rating}</ListItem.Subtitle>
-                    <ListItem.Subtitle style={styles.bookItemSubtitle}>{book.review}</ListItem.Subtitle>
                 </ListItem.Content>
             </ListItem>
         )
