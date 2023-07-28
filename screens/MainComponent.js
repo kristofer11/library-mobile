@@ -2,12 +2,16 @@ import { View, Platform } from "react-native";
 import Constants from "expo-constants";
 import BookshelfScreen from "./BookshelfScreen";
 import BookInfoScreen from "./BookInfoScreen";
+import LoginScreen from './LoginScreen';
+import { useState, useEffect } from "react";
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import { Icon } from "react-native-elements";
 import { BOOKSHELF_DATA } from "../shared/BOOKSHELF_DATA";
 import { createStackNavigator } from "@react-navigation/stack";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const BookshelfNavigator = () => {
+
+const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
     const Stack = createStackNavigator();
 
     return (
@@ -20,31 +24,54 @@ const BookshelfNavigator = () => {
                 headerTintColor: '#fff',
             }}
         >
-            <Stack.Screen 
+            <Stack.Screen
                 name="Bookshelf"
-                component={BookshelfScreen}
+                component={() => <BookshelfScreen setIsLoggedIn={setIsLoggedIn} />}
                 options={{
                     title: 'Bookshelf'
                 }}
             />
-            <Stack.Screen 
+            <Stack.Screen
                 name="BookInfoScreen"
                 component={BookInfoScreen}
                 options={({ route }) => ({
                     title: route.params.book.title
                 })}
             />
+            <Stack.Screen
+                name="LoginScreen"
+                component={LoginScreen}
+                options={{
+                    title: 'Login',
+                }}
+            />
+
         </Stack.Navigator>
         // <BookshelfScreen books={books} />
     )
 };
 
 const Main = () => {
-   return (
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+    useEffect(() => {
+        const checkToken = async () => {
+            const token = await AsyncStorage.getItem('jwtToken')
+
+            if (token) {
+                setIsLoggedIn(true)
+                console.log('token found, went ahead and logged in the guy')
+            }
+        }
+        checkToken();
+    }, [])
+
+    return (
         <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
-            <BookshelfNavigator />
+            {isLoggedIn ? <BookshelfNavigator setIsLoggedIn={setIsLoggedIn} /> : <LoginScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
         </View>
-   )
+    )
 }
 
 export default Main;

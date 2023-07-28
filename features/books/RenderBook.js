@@ -7,7 +7,6 @@ const RenderBook = ({ book }) => {
             <Card
                 containerStyle={{ padding: 0 }}
             >
-                <Card.Title>{book.title}</Card.Title>
                 <View>
                     <Text
                         style={{

@@ -5,15 +5,28 @@ import LoginRegisterModal from '../components/LoginRegisterModal';
 import { Avatar, ListItem } from 'react-native-elements';
 import { useState } from 'react';
 import { BOOKSHELF_DATA } from '../shared/BOOKSHELF_DATA';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const BookshelfScreen = ({ navigation }) => {
+
+const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
     const [books, setBooks] = useState(BOOKSHELF_DATA);
+
+    const handleLogout = async () => {
+        try {
+            await AsyncStorage.removeItem('jwtToken');
+            setIsLoggedIn(false)
+
+            navigation.navigate('LoginScreen');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const renderBookItem = ({ item: book }) => {
         return (
-            <ListItem 
+            <ListItem
                 style={styles.bookItem}
-                onPress={() => 
+                onPress={() =>
                     navigation.navigate('BookInfoScreen', { book })}
             >
                 <ListItem.Content style={styles.listItemContent}>
@@ -25,13 +38,20 @@ const BookshelfScreen = ({ navigation }) => {
     }
 
     return (
-        <FlatList
-            data={books}
-            renderItem={renderBookItem}
-            keyExtractor={item => item.id.toString()}
-            style={styles.bookshelfScreen}
-        />
+        <View>
+            <FlatList
+                data={books}
+                renderItem={renderBookItem}
+                keyExtractor={item => item.id.toString()}
+                style={styles.bookshelfScreen}
+            />
+            <Button
+                title="logout"
+                onPress={handleLogout}
+            />
+        </View>
+
     )
 }
 
-export default BookshelfScreen
+export default BookshelfScreen;
