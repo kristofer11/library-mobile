@@ -11,18 +11,30 @@ export default {
         paddingTop: 15,
         paddingHorizontal: 90
     },
+    bookshelfScreen: {
+    },
     bookItem: {
     },
     listItemContent: {
-        backgroundColor: '#fff'
+        backgroundColor: '#00000072',
+        borderRadius: 10,
+        padding: 10,
+        shadowOpacity: 0.50,
+
     },
     bookItemTitle: {
         color: '#fff',
-        backgroundColor: 'dodgerblue'
+        backgroundColor: 'dodgerblue',
+        padding: 8,
+        borderRadius: 10,
+        
     },
     bookItemSubtitle: {
         color: '#fff',
-        backgroundColor: 'dodgerblue',
+        backgroundColor: 'navy',
+        padding: 8,
+        borderRadius: 10,
+        margin: 10
     },
     homeScreenText: {
         textAlign: 'center',

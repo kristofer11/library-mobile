@@ -11,23 +11,31 @@ const RenderBook = ({ book }) => {
                     <Text
                         style={{
                             color: 'white',
-                            backgroundColor: 'blue',
+                            backgroundColor: 'dodgerblue',
                             textAlign: 'center',
-                            fontSize: 20
+                            fontSize: 20,
+                            padding: 10,
+                            borderRadius: 10,
+                            marginBottom: 10
                         }}>{book.author}</Text>
                     <Text
                         style={{
                             color: 'white',
-                            backgroundColor: 'blue',
+                            backgroundColor: 'dodgerblue',
                             textAlign: 'center',
-                            fontSize: 20
+                            fontSize: 20,
+                            padding: 10,
+                            borderRadius: 10,
+                            marginBottom: 10
                         }}>Rating: {book.rating}</Text>
                     <Text
                         style={{
                             color: 'white',
-                            backgroundColor: 'blue',
+                            backgroundColor: 'dodgerblue',
                             textAlign: 'center',
-                            fontSize: 20
+                            fontSize: 20,
+                            padding: 10,
+                            borderRadius: 10
                         }}>Review: {book.review}</Text>
                 </View>
             </Card>

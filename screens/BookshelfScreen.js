@@ -27,7 +27,7 @@ const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
     }
 
     return (
-        <View>
+        <View style={styles.bookshelfScreen}>
             <FlatList
                 data={books}
                 renderItem={renderBookItem}
