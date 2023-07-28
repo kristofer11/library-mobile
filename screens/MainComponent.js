@@ -1,4 +1,4 @@
-import { View, Platform } from "react-native";
+import { View, Platform, Button } from "react-native";
 import Constants from "expo-constants";
 import BookshelfScreen from "./BookshelfScreen";
 import BookInfoScreen from "./BookInfoScreen";
@@ -24,13 +24,32 @@ const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
                 headerTintColor: '#fff',
             }}
         >
-            <Stack.Screen
+            {/* <Stack.Screen
                 name="Bookshelf"
-                component={() => <BookshelfScreen setIsLoggedIn={setIsLoggedIn} />}
+                component={BookshelfScreen}
                 options={{
                     title: 'Bookshelf'
                 }}
+            /> */}
+
+
+            <Stack.Screen
+                name="Bookshelf"
+                component={BookshelfScreen}
+                options={{
+                    title: 'Bookshelf',
+                    headerRight: () => (
+                        <Button
+                            title="Logout"
+                            onPress={() => {
+                                setIsLoggedIn(false);
+                            }}
+                        />
+                    ),
+                }}
             />
+
+
             <Stack.Screen
                 name="BookInfoScreen"
                 component={BookInfoScreen}

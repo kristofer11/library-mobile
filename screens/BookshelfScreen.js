@@ -11,17 +11,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
     const [books, setBooks] = useState(BOOKSHELF_DATA);
 
-    const handleLogout = async () => {
-        try {
-            await AsyncStorage.removeItem('jwtToken');
-            setIsLoggedIn(false)
-
-            navigation.navigate('LoginScreen');
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     const renderBookItem = ({ item: book }) => {
         return (
             <ListItem
@@ -44,10 +33,6 @@ const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
                 renderItem={renderBookItem}
                 keyExtractor={item => item.id.toString()}
                 style={styles.bookshelfScreen}
-            />
-            <Button
-                title="logout"
-                onPress={handleLogout}
             />
         </View>
 

@@ -17,12 +17,12 @@ export default {
         backgroundColor: '#fff'
     },
     bookItemTitle: {
-        color: 'navy',
-        backgroundColor: 'orange'
+        color: '#fff',
+        backgroundColor: 'dodgerblue'
     },
     bookItemSubtitle: {
         color: '#fff',
-        backgroundColor: 'red',
+        backgroundColor: 'dodgerblue',
     },
     homeScreenText: {
         textAlign: 'center',
