@@ -1,26 +1,35 @@
 import colors from './colors';
 
 export default {
+    backgroundImage: {
+        flex: 1,
+        justifyContent: 'center',
+        resizeMode: 'cover',
+        // alignItems: 'center',
+        width: '100%',
+        height: '100%'
+    },
     bookshelfScreen: {
         textAlign: 'center',
         marginTop: 40,
-        backgroundColor: colors.darkGrey,
+        background: 'transparent',
         padding: 20
     },
     buttons: {
         paddingTop: 15,
         paddingHorizontal: 90
     },
-    bookshelfScreen: {
+    bookListContainer: {
+        backgroundColor: 'black',
     },
     bookItem: {
+        backgroundColor: 'transparent',
     },
     listItemContent: {
-        backgroundColor: '#00000072',
+        backgroundColor: '#5637DD',
         borderRadius: 10,
         padding: 10,
         shadowOpacity: 0.50,
-
     },
     bookItemTitle: {
         color: '#fff',
@@ -43,6 +52,9 @@ export default {
         padding: 10,
         color: colors.darkGrey,
         fontSize: 44
+    },
+    logoutButton: {
+        marginRight: 10,
     },
     screenContainer: {
         marginTop: 22,

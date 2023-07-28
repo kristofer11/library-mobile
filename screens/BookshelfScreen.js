@@ -5,7 +5,7 @@ import LoginRegisterModal from '../components/LoginRegisterModal';
 import { Avatar, ListItem } from 'react-native-elements';
 import { useState } from 'react';
 import { BOOKSHELF_DATA } from '../shared/BOOKSHELF_DATA';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import CustomBackground from '../components/CustomBackground';
 
 
 const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
@@ -27,15 +27,16 @@ const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
     }
 
     return (
-        <View style={styles.bookshelfScreen}>
-            <FlatList
-                data={books}
-                renderItem={renderBookItem}
-                keyExtractor={item => item.id.toString()}
-                style={styles.bookshelfScreen}
-            />
-        </View>
-
+        <CustomBackground>
+            <View style={styles.bookListContainer}>
+                <FlatList
+                    data={books}
+                    renderItem={renderBookItem}
+                    keyExtractor={item => item.id.toString()}
+                    style={styles.bookListContainer}
+                />
+            </View>
+        </CustomBackground>
     )
 }
 

@@ -1,4 +1,5 @@
-import { View, Platform, Button } from "react-native";
+import { View, Platform, Button, ImageBackground, SafeAreaView } from "react-native";
+import styles from '../config/styles';
 import Constants from "expo-constants";
 import BookshelfScreen from "./BookshelfScreen";
 import BookInfoScreen from "./BookInfoScreen";
@@ -9,6 +10,7 @@ import { useState, useEffect } from "react";
 import { BOOKSHELF_DATA } from "../shared/BOOKSHELF_DATA";
 import { createStackNavigator } from "@react-navigation/stack";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CustomBackground from "../components/CustomBackground";
 
 
 const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
@@ -24,27 +26,21 @@ const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
                 headerTintColor: '#fff',
             }}
         >
-            {/* <Stack.Screen
-                name="Bookshelf"
-                component={BookshelfScreen}
-                options={{
-                    title: 'Bookshelf'
-                }}
-            /> */}
-
-
             <Stack.Screen
                 name="Bookshelf"
                 component={BookshelfScreen}
                 options={{
                     title: 'Bookshelf',
                     headerRight: () => (
-                        <Button
-                            title="Logout"
-                            onPress={() => {
-                                setIsLoggedIn(false);
-                            }}
-                        />
+                        <View style={styles.logoutButton} >
+                            <Button
+                                title="Logout"
+                                onPress={() => {
+                                    setIsLoggedIn(false);
+                                }}
+                            />
+                        </View>
+
                     ),
                 }}
             />
@@ -87,9 +83,12 @@ const Main = () => {
     }, [])
 
     return (
-        <View style={{ flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
-            {isLoggedIn ? <BookshelfNavigator setIsLoggedIn={setIsLoggedIn} /> : <LoginScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
-        </View>
+        <CustomBackground>
+        <SafeAreaView style={{ backgroundColor: 'transparent', flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
+                {isLoggedIn ? <BookshelfNavigator setIsLoggedIn={setIsLoggedIn} /> : <LoginScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+        </SafeAreaView>
+        </CustomBackground>
+
     )
 }
 

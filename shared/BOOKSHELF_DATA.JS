@@ -17,9 +17,9 @@ export const BOOKSHELF_DATA = [
     },
     {
         id: 3,
-        title: 'The Lion, the Witch, and the Wardrobe',
-        author: 'C.S. Lewis',
-        rating: 5,
-        review: 'A classic fantasy series that has inspired many others.',
+        title: 'Red Rising',
+        author: 'Pierce Brown',
+        rating: 4,
+        review: 'A fantastic sci-fi series with a great main character.',
     }
 ];
