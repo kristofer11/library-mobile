@@ -21,7 +21,7 @@ const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
             initialRouteName="Bookshelf"
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: '#5637DD'
+                    backgroundColor: '#519C89'
                 },
                 headerTintColor: '#fff',
             }}

@@ -26,21 +26,21 @@ export default {
         backgroundColor: 'transparent',
     },
     listItemContent: {
-        backgroundColor: '#5637DD',
+        backgroundColor: '',
         borderRadius: 10,
         padding: 10,
         shadowOpacity: 0.50,
     },
     bookItemTitle: {
         color: '#fff',
-        backgroundColor: 'dodgerblue',
+        backgroundColor: '#519C89',
         padding: 8,
         borderRadius: 10,
         
     },
     bookItemSubtitle: {
         color: '#fff',
-        backgroundColor: 'navy',
+        backgroundColor: '#519C89',
         padding: 8,
         borderRadius: 10,
         margin: 10
