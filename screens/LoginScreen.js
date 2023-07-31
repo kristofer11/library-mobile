@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { api } from '../api/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import CustomBackground from '../components/CustomBackground';
 
 
 const LoginScreen = ({ setIsLoggedIn }) => {
@@ -32,23 +33,30 @@ const LoginScreen = ({ setIsLoggedIn }) => {
         }
     }
 
-        return (
+    return (
+        <CustomBackground>
             <View>
-                <Text>Login to your account</Text>
+                <Text style={{backgroundColor: '#fff', color: '#000'}}>Login to your account</Text>
                 <TextInput
                     placeholder="Email"
                     value={email}
-                    onChangeText={setEmail} />
+                    onChangeText={setEmail} 
+                    backgroundColor="#fff"
+                    color="#000"    
+                />
                 <TextInput
                     placeholder="Password"
                     value={password}
                     onChangeText={setPassword}
                     secureTextEntry
+                    backgroundColor="#fff"
+                    color="#000" 
                 />
                 <Button title="Login" onPress={handleLogin} />
 
             </View>
-        )
+        </CustomBackground>
+    )
 }
 
 export default LoginScreen
