@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ImageBackground, StyleSheet } from 'react-native';
+// import styles from './config/styles'
 
 const CustomBackground = ({ children }) => {
   return (
@@ -12,11 +13,16 @@ const CustomBackground = ({ children }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
-  },
-});
 
 export default CustomBackground;
+
+const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        justifyContent: 'center',
+        resizeMode: 'cover',
+        // alignItems: 'center',
+        width: '100%',
+        height: '100%',
+    },
+});

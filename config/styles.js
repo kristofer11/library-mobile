@@ -1,18 +1,19 @@
 import colors from './colors';
 
 export default {
-    backgroundImage: {
-        flex: 1,
-        justifyContent: 'center',
-        resizeMode: 'cover',
-        // alignItems: 'center',
-        width: '100%',
-        height: '100%'
-    },
+    // backgroundImage: {
+    //     flex: 1,
+    //     justifyContent: 'center',
+    //     resizeMode: 'cover',
+    //     // alignItems: 'center',
+    //     width: '100%',
+    //     height: '100%',
+    //     backgroundColor: 'transparent'
+    // },
     bookshelfScreen: {
         textAlign: 'center',
         marginTop: 40,
-        background: 'transparent',
+        backgroundColor: 'transparent',
         padding: 20
     },
     buttons: {
@@ -20,13 +21,14 @@ export default {
         paddingHorizontal: 90
     },
     bookListContainer: {
-        backgroundColor: 'black',
+        backgroundColor: 'transparent',
+        background: 'transparent',
     },
     bookItem: {
         backgroundColor: 'transparent',
     },
     listItemContent: {
-        backgroundColor: '',
+        backgroundColor: 'transparent',
         borderRadius: 10,
         padding: 10,
         shadowOpacity: 0.50,
