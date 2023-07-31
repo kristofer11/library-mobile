@@ -24,6 +24,9 @@ const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
                     backgroundColor: '#519C89'
                 },
                 headerTintColor: '#fff',
+                cardStyle: {
+                    backgroundColor: 'transparent',
+                },
             }}
         >
             <Stack.Screen
@@ -83,11 +86,11 @@ const Main = () => {
     }, [])
 
     return (
-        <CustomBackground>
-        <SafeAreaView style={{ backgroundColor: 'transparent', flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
+        // <CustomBackground>
+            <SafeAreaView style={{ backgroundColor: 'transparent', flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
                 {isLoggedIn ? <BookshelfNavigator setIsLoggedIn={setIsLoggedIn} /> : <LoginScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
-        </SafeAreaView>
-        </CustomBackground>
+            </SafeAreaView>
+        // </CustomBackground>
 
     )
 }

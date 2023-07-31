@@ -1,15 +1,6 @@
 import colors from './colors';
 
 export default {
-    // backgroundImage: {
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     resizeMode: 'cover',
-    //     // alignItems: 'center',
-    //     width: '100%',
-    //     height: '100%',
-    //     backgroundColor: 'transparent'
-    // },
     bookshelfScreen: {
         textAlign: 'center',
         marginTop: 40,
@@ -38,7 +29,7 @@ export default {
         backgroundColor: '#519C89',
         padding: 8,
         borderRadius: 10,
-        
+
     },
     bookItemSubtitle: {
         color: '#fff',
@@ -83,7 +74,7 @@ export default {
         },
         shadowOpacity: 0.50,
         shadowRadius: 12.35,
-        
+
         elevation: 19,
     },
     homeOptionCardText: {
