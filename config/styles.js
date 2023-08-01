@@ -12,17 +12,15 @@ export default {
         paddingHorizontal: 90
     },
     bookListContainer: {
-        backgroundColor: 'transparent',
-        background: 'transparent',
+        backgroundColor: 'pink',
     },
     bookItem: {
-        backgroundColor: 'transparent',
+        backgroundColor: 'pink',
+        border: '3px solid pink'
     },
     listItemContent: {
-        backgroundColor: 'transparent',
         borderRadius: 10,
         padding: 10,
-        shadowOpacity: 0.50,
     },
     bookItemTitle: {
         color: '#fff',

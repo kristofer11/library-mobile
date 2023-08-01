@@ -5,8 +5,7 @@ const RenderBook = ({ book }) => {
     if (book) {
         return (
             <Card
-                // containerStyle={{ padding: 2, backgroundColor: 'transparent' }}
-                wrapperStyle={{ padding: 2 }}
+                containerStyle={{ padding: 2, backgroundColor: '#ffffff98', borderRadius: 10  }}
             >
                 <View style={{ backgroundColor: 'transparent'}} >
                     <Text

@@ -1,5 +1,4 @@
 import RenderBook from '../features/books/RenderBook';
-import styles from '../config/styles';
 import CustomBackground from '../components/CustomBackground';
 
 const BookInfoScreen = ({ route }) => {

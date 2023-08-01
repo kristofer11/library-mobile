@@ -13,29 +13,26 @@ const BookshelfScreen = ({ navigation, setIsLoggedIn }) => {
 
     const renderBookItem = ({ item: book }) => {
         return (
-            <ListItem
-                style={styles.bookItem}
-                onPress={() =>
-                    navigation.navigate('BookInfoScreen', { book })}
-            >
-                <ListItem.Content style={styles.listItemContent}>
-                    <ListItem.Title style={styles.bookItemTitle}>{book.title}</ListItem.Title>
-                    <ListItem.Subtitle style={styles.bookItemSubtitle}>{book.author}</ListItem.Subtitle>
-                </ListItem.Content>
-            </ListItem>
+                <ListItem
+                    style={styles.bookItem}
+                    onPress={() =>
+                        navigation.navigate('BookInfoScreen', { book })}
+                >
+                    <ListItem.Content style={styles.listItemContent}>
+                        <ListItem.Title style={styles.bookItemTitle}>{book.title}</ListItem.Title>
+                        <ListItem.Subtitle style={styles.bookItemSubtitle}>{book.author}</ListItem.Subtitle>
+                    </ListItem.Content>
+                </ListItem>
         )
     }
 
     return (
         <CustomBackground>
-            <View style={styles.bookListContainer}>
                 <FlatList
                     data={books}
                     renderItem={renderBookItem}
                     keyExtractor={item => item.id.toString()}
-                    style={styles.bookListContainer}
                 />
-            </View>
         </CustomBackground>
     )
 }

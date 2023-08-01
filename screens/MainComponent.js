@@ -1,4 +1,4 @@
-import { View, Platform, Button, ImageBackground, SafeAreaView } from "react-native";
+import { View, Platform, Button, SafeAreaView } from "react-native";
 import styles from '../config/styles';
 import Constants from "expo-constants";
 import BookshelfScreen from "./BookshelfScreen";
@@ -7,10 +7,8 @@ import LoginScreen from './LoginScreen';
 import { useState, useEffect } from "react";
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import { Icon } from "react-native-elements";
-import { BOOKSHELF_DATA } from "../shared/BOOKSHELF_DATA";
 import { createStackNavigator } from "@react-navigation/stack";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CustomBackground from "../components/CustomBackground";
 
 
 const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
@@ -43,8 +41,7 @@ const BookshelfNavigator = ({ isLoggedIn, setIsLoggedIn }) => {
                                 }}
                             />
                         </View>
-
-                    ),
+                    )
                 }}
             />
 
@@ -86,12 +83,9 @@ const Main = () => {
     }, [])
 
     return (
-        // <CustomBackground>
             <SafeAreaView style={{ backgroundColor: 'transparent', flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight }}>
                 {isLoggedIn ? <BookshelfNavigator setIsLoggedIn={setIsLoggedIn} /> : <LoginScreen isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
             </SafeAreaView>
-        // </CustomBackground>
-
     )
 }
 
