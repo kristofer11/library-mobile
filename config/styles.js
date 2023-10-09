@@ -18,6 +18,9 @@ export default {
         backgroundColor: 'pink',
         border: '3px solid pink'
     },
+    bookItemImg:{
+        width: '222px'
+    },
     listItemContent: {
         borderRadius: 10,
         padding: 10,

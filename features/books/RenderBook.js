@@ -1,13 +1,17 @@
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 
 const RenderBook = ({ book }) => {
     if (book) {
         return (
             <Card
-                containerStyle={{ padding: 2, backgroundColor: '#ffffff98', borderRadius: 10  }}
+                containerStyle={{ padding: 2, backgroundColor: '#ffffff98', borderRadius: 10 }}
             >
-                <View style={{ backgroundColor: 'transparent'}} >
+                <View style={{ backgroundColor: 'transparent' }} >
+                    <Image 
+                        source={{ uri: book.img }}
+                        style={{ width: 222, height: 222, borderRadius: 10, marginBottom: 10 }}
+                    />
                     <Text
                         style={{
                             color: 'white',
